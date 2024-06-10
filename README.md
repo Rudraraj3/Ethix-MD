@@ -7,7 +7,7 @@
     <p>Your all-in-one WhatsApp chatbot solution</p>
   </div>
   
-      #### DEPLOY TO HEROKU 
+#### DEPLOY TO HEROKU 
 
 1. If You don't have a account in Heroku. Create a account.
     <br>
