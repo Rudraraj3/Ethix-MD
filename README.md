@@ -3,8 +3,8 @@
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa;">
   <div style="background-color: #007bff; color: white; padding: 20px; text-align: center;">
-    <h1>WP Bot</h1>
-    <p>Your all-in-one WhatsApp chatbot solution</p>
+    <h1>Ethix-MD WP Bot</h1>
+    <p>Your all-in-one WhatsApp chatbot solution Fully button menu</p>
   </div>
   
 #### DEPLOY TO HEROKU 
