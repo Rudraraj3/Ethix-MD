@@ -9,6 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f9fa;
     }
 
     header {
@@ -22,12 +23,15 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 0 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .info {
-      background-color: #f8f9fa;
       padding: 20px;
       margin-top: 20px;
+      border-top: 1px solid #ddd;
     }
 
     .deploy-buttons {
@@ -36,13 +40,13 @@
     }
 
     .deploy-button {
-      display: inline-block;
       padding: 10px 20px;
       background-color: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       margin: 0 10px;
+      display: inline-block;
     }
   </style>
 </head>
@@ -62,13 +66,13 @@
     </div>
     <div class="deploy-buttons">
       <a href="https://heroku.com/deploy" class="deploy-button">Deploy to Heroku</a>
-      <a href="#" class="deploy-button">Deploy to Clever Cloud</a>
+      <a href="https://clever-cloud.com" class="deploy-button">Deploy to Clever Cloud</a>
     </div>
   </div>
 
   <script>
     // Fetch GitHub repository statistics
-    fetch('https://api.github.com/repos/gssbotwa/Ethix-MD')
+    fetch('https://api.github.com/repos/Ethix-Xsid/Ethix-MD')
       .then(response => response.json())
       .then(data => {
         document.getElementById('forks').innerText = data.forks;
