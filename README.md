@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WP Bot Homepage</title>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa;">
   <div style="background-color: #007bff; color: white; padding: 20px; text-align: center;">
@@ -24,17 +20,5 @@
       <a href="https://clever-cloud.com" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 0 10px; display: inline-block;">Deploy to Clever Cloud</a>
     </div>
   </div>
-
-  <script>
-    // Fetch GitHub repository statistics
-    fetch('https://api.github.com/repos/Ethix-Xsid/Ethix-MD')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('forks').innerText = data.forks;
-        document.getElementById('stars').innerText = data.stargazers_count;
-        document.getElementById('watchers').innerText = data.watchers_count;
-      })
-      .catch(error => console.error('Error fetching GitHub repository statistics:', error));
-  </script>
 </body>
 </html>
