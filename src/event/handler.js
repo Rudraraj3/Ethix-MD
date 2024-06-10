@@ -1,1 +1,141 @@
-const _0x186e9f=_0x4619;(function(_0x5b27c1,_0x16fcab){const _0x55d3be=_0x4619,_0xca6b78=_0x5b27c1();while(!![]){try{const _0x3239cc=parseInt(_0x55d3be(0xa6))/0x1*(parseInt(_0x55d3be(0x92))/0x2)+parseInt(_0x55d3be(0x79))/0x3*(-parseInt(_0x55d3be(0x7e))/0x4)+parseInt(_0x55d3be(0x8b))/0x5*(-parseInt(_0x55d3be(0x98))/0x6)+-parseInt(_0x55d3be(0x77))/0x7+parseInt(_0x55d3be(0x9c))/0x8+parseInt(_0x55d3be(0x76))/0x9*(parseInt(_0x55d3be(0x8d))/0xa)+parseInt(_0x55d3be(0x83))/0xb*(parseInt(_0x55d3be(0x7f))/0xc);if(_0x3239cc===_0x16fcab)break;else _0xca6b78['push'](_0xca6b78['shift']());}catch(_0x1d103a){_0xca6b78['push'](_0xca6b78['shift']());}}}(_0x52c4,0x59745));import{serialize,decodeJid}from'../../lib/Serializer.js';import _0x24aecb from'path';function _0x4619(_0x1358b9,_0x5689f7){const _0x52c423=_0x52c4();return _0x4619=function(_0x461976,_0x232c8a){_0x461976=_0x461976-0x75;let _0x16cc3b=_0x52c423[_0x461976];return _0x16cc3b;},_0x4619(_0x1358b9,_0x5689f7);}import _0x2dd086 from'fs/promises';function _0x52c4(){const _0x23cbd4=['get','3991000CaWbnE','slice','from','status@broadcast','endsWith','stringify','then','user','map','superadmin','567071TrxWfA','startsWith','groupMetadata','https://chat.whatsapp.com/E3PWxdvLc7ZCp1ExOCkEGp','notify','message','match','pushName','now','isGroup','You\x20have\x20reached\x20the\x20maximum\x20number\x20of\x20allowed\x20commands.\x20Join\x20the\x20group\x20to\x20use\x20more\x20commands\x20continuously.\x0a\x0aOtherwise,\x20wait\x20for\x20some\x20time\x20to\x20use\x20commands\x20again.\x0a\x0aTime\x20Left:\x20','length','default','@s.whatsapp.net','120363162694704836@g.us','13311CRrWDf','1284521jHOoft','type','9XrIini','OWNER_NUMBER','body','decodeJid','log','878056fxvaJc','98796dUQAMi','join','participants','toLowerCase','22bnTjDw','admin','plugin','dirname','sender','includes','Hai\x20Im\x20sock\x20botwa','timestamp','190655iWHqKz','split','1110WMjCAS','count','pathname','floor','public','2MurPKQ','.js','push','key','remoteJid','parse','6qgWLTX','readMessages','set'];_0x52c4=function(){return _0x23cbd4;};return _0x52c4();}import _0x2a7f38 from'../../config.cjs';import{smsg}from'../../lib/myfunc.cjs';import{handleAntilink}from'./antilink.js';const userCommandCounts=new Map(),__filename=new URL(import.meta['url'])[_0x186e9f(0x8f)],__dirname=_0x24aecb[_0x186e9f(0x86)](__filename),getMessage=async(_0x3aac2b,_0x38cd15)=>{const _0xeb05ae=_0x186e9f;if(_0x38cd15){const _0x2572fd=await _0x38cd15['loadMessage'](_0x3aac2b[_0xeb05ae(0x96)],_0x3aac2b['id']);return _0x2572fd[_0xeb05ae(0xab)]||undefined;}return{'conversation':_0xeb05ae(0x89)};};export const getGroupAdmins=_0x5073c5=>{const _0x34fb7e=_0x186e9f;let _0x4abc0d=[];for(let _0x4a33ee of _0x5073c5){(_0x4a33ee['admin']===_0x34fb7e(0xa5)||_0x4a33ee['admin']===_0x34fb7e(0x84))&&_0x4abc0d[_0x34fb7e(0x94)](_0x4a33ee['id']);}return _0x4abc0d||[];};const Handler=async(_0x92f752,_0xf56359,_0x4ce678,_0x2e2417)=>{const _0x101d06=_0x186e9f;try{if(_0x92f752[_0x101d06(0x78)]!==_0x101d06(0xaa))return;const _0x477765=serialize(JSON[_0x101d06(0x97)](JSON[_0x101d06(0xa1)](_0x92f752['messages'][0x0])),_0xf56359,_0x4ce678);if(!_0x477765[_0x101d06(0xab)])return;const _0x2ce8f4=_0x477765['isGroup']?await _0xf56359['groupMetadata'](_0x477765[_0x101d06(0x9e)])[_0x101d06(0xa2)](_0x21b14b=>_0x21b14b['participants']):[],_0x299386=_0x477765['isGroup']?getGroupAdmins(_0x2ce8f4):[],_0x29d98e=_0xf56359[_0x101d06(0xa3)]['id'][_0x101d06(0x8c)](':')[0x0]+'@s.whatsapp.net',_0x222c10=_0x477765['isGroup']?_0x299386[_0x101d06(0x88)](_0x29d98e):![],_0x34d09f=_0x477765[_0x101d06(0xaf)]?_0x299386[_0x101d06(0x88)](_0x477765[_0x101d06(0x87)]):![],_0x5df414=/^[\\/!#.]/,_0x149892=_0x36312f=>_0x5df414['test'](_0x36312f),_0xff07ab=_0x149892(_0x477765[_0x101d06(0x7b)])?_0x477765[_0x101d06(0x7b)][_0x101d06(0xac)](_0x5df414):null,_0x29ac3e=_0xff07ab?_0xff07ab[0x0]:'/',_0x34b940=_0x477765[_0x101d06(0x7b)][_0x101d06(0xa7)](_0x29ac3e)?_0x477765['body'][_0x101d06(0x9d)](_0x29ac3e[_0x101d06(0xb1)])[_0x101d06(0x8c)]('\x20')[0x0][_0x101d06(0x82)]():'',_0x17327d=_0x477765[_0x101d06(0x7b)][_0x101d06(0x9d)](_0x29ac3e[_0x101d06(0xb1)]+_0x34b940['length'])['trim']();_0x477765['key']&&_0x477765[_0x101d06(0x95)][_0x101d06(0x96)]===_0x101d06(0x9f)&&_0x2a7f38['AUTO_STATUS_SEEN']&&await _0xf56359[_0x101d06(0x99)]([_0x477765[_0x101d06(0x95)]]);const _0x5878fb=await _0xf56359[_0x101d06(0x7c)](_0xf56359[_0x101d06(0xa3)]['id']),_0x2faee0=_0x2a7f38[_0x101d06(0x7a)]+_0x101d06(0xb3);let _0x3f6e92=![];_0x477765[_0x101d06(0xaf)]?_0x3f6e92=_0x477765[_0x101d06(0x87)]===_0x2faee0||_0x477765[_0x101d06(0x87)]===_0x5878fb:_0x3f6e92=_0x477765['sender']===_0x2faee0||_0x477765[_0x101d06(0x87)]===_0x5878fb;if(!_0xf56359[_0x101d06(0x91)]){if(!_0x3f6e92)return;}const _0x1ee098=_0x101d06(0x75),_0x46b3eb=_0x101d06(0xa9),_0x189a20=0xa,_0x7954bf=0x18*0x3c*0x3c*0x3e8;if(_0x149892(_0x477765[_0x101d06(0x7b)])&&_0x2a7f38['NOT_ALLOW']){const _0x275efc=await _0xf56359[_0x101d06(0xa8)](_0x1ee098),_0x13d1d8=_0x275efc[_0x101d06(0x81)],_0x5623c3=_0x13d1d8[_0x101d06(0xa4)](_0xbffec2=>_0xbffec2['id']);if(!_0x5623c3['includes'](_0x477765[_0x101d06(0x87)])){let _0x23d2c4=userCommandCounts[_0x101d06(0x9b)](_0x477765[_0x101d06(0x87)])||{'count':0x0,'timestamp':Date[_0x101d06(0xae)]()};Date['now']()-_0x23d2c4[_0x101d06(0x8a)]>=_0x7954bf&&(_0x23d2c4[_0x101d06(0x8e)]=0x0,_0x23d2c4[_0x101d06(0x8a)]=Date['now']());if(_0x23d2c4[_0x101d06(0x8e)]>=_0x189a20){const _0x2946b2=_0x7954bf-(Date['now']()-_0x23d2c4[_0x101d06(0x8a)]),_0x5ad48d=Math['floor'](_0x2946b2/(0x3c*0x3c*0x3e8)),_0x59bfe5=Math[_0x101d06(0x90)](_0x2946b2%(0x3c*0x3c*0x3e8)/(0x3c*0x3e8)),_0x21fe7e=_0x101d06(0xb0)+_0x5ad48d+'H\x20'+_0x59bfe5+'M';await _0xf56359['sendMessage'](_0x477765[_0x101d06(0x9e)],{'text':_0x21fe7e,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'title':''+_0x477765[_0x101d06(0xad)],'sourceUrl':_0x46b3eb,'body':''}}},{'quoted':_0x477765});return;}else _0x23d2c4[_0x101d06(0x8e)]+=0x1,userCommandCounts[_0x101d06(0x9a)](_0x477765[_0x101d06(0x87)],_0x23d2c4);}}await handleAntilink(_0x477765,_0xf56359,_0x4ce678,_0x222c10,_0x34d09f,_0x3f6e92);const {isGroup:_0x3a1d27,type:_0x56f20b,sender:_0xbb4420,from:_0x1a56c6,body:_0x35f108}=_0x477765;console['log'](_0x477765);const _0x5f3271=await _0x2dd086['readdir'](_0x24aecb['join'](__dirname,'..','plugin'));for(const _0x148694 of _0x5f3271){if(_0x148694[_0x101d06(0xa0)](_0x101d06(0x93))){const _0x7809e4=await import(_0x24aecb[_0x101d06(0x80)](__dirname,'..',_0x101d06(0x85),_0x148694)),_0x313e27=_0x7809e4[_0x101d06(0xb2)];await _0x313e27(_0x477765,_0xf56359);}}}catch(_0x228e4a){console[_0x101d06(0x7d)](_0x228e4a);}};export default Handler;
+import { serialize, decodeJid } from '../../lib/Serializer.js';
+import path from 'path';
+import fs from 'fs/promises';
+import config from '../../config.cjs';
+import { smsg } from '../../lib/myfunc.cjs';
+import { handleAntilink } from './antilink.js';
+
+
+const userCommandCounts = new Map();
+
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = path.dirname(__filename);
+
+const getMessage = async (key, store) => {
+    if (store) {
+        const msg = await store.loadMessage(key.remoteJid, key.id);
+        return msg.message || undefined;
+    }
+    return {
+        conversation: "Hai Im sock botwa"
+    };
+};
+
+// Function to get group admins
+export const getGroupAdmins = (participants) => {
+    let admins = [];
+    for (let i of participants) {
+        if (i.admin === "superadmin" || i.admin === "admin") {
+            admins.push(i.id);
+        }
+    }
+    return admins || [];
+};
+
+const Handler = async (chatUpdate, sock, logger, store) => {
+    try {
+        if (chatUpdate.type !== 'notify') return;
+
+        const m = serialize(JSON.parse(JSON.stringify(chatUpdate.messages[0])), sock, logger);
+        if (!m.message) return;
+
+        const participants = m.isGroup ? await sock.groupMetadata(m.from).then(metadata => metadata.participants) : [];
+        const groupAdmins = m.isGroup ? getGroupAdmins(participants) : [];
+
+        // Retrieve the bot's ID from the socket connection and remove the suffix
+        const botId = sock.user.id.split(':')[0] + '@s.whatsapp.net';
+        const isBotAdmins = m.isGroup ? groupAdmins.includes(botId) : false;
+        const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false;
+
+
+        const PREFIX = /^[\\/!#.]/;
+        const isCOMMAND = (body) => PREFIX.test(body);
+        const prefixMatch = isCOMMAND(m.body) ? m.body.match(PREFIX) : null;
+        const prefix = prefixMatch ? prefixMatch[0] : '/';
+        const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+        const text = m.body.slice(prefix.length + cmd.length).trim();
+
+        if (m.key && m.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
+            await sock.readMessages([m.key]);
+        }
+
+        const botNumber = await sock.decodeJid(sock.user.id);
+        const ownerNumber = config.OWNER_NUMBER + '@s.whatsapp.net';
+        let isCreator = false;
+
+        if (m.isGroup) {
+            isCreator = m.sender === ownerNumber || m.sender === botNumber;
+        } else {
+            isCreator = m.sender === ownerNumber || m.sender === botNumber;
+        }
+
+        if (!sock.public) {
+            if (!isCreator) {
+                return;
+            }
+        }
+
+        const groupChatId = '120363162694704836@g.us';
+        const groupLink = 'https://chat.whatsapp.com/E3PWxdvLc7ZCp1ExOCkEGp';
+        const commandLimit = 10; // Daily command limit
+        const oneDayInMs = 24 * 60 * 60 * 1000; // Milliseconds in a day
+
+        if (isCOMMAND(m.body) && config.NOT_ALLOW) {
+            const groupMetadata = await sock.groupMetadata(groupChatId);
+            const participants = groupMetadata.participants;
+            const participantIndex = participants.map(participant => participant.id);
+
+            if (!participantIndex.includes(m.sender)) {
+                let userInfo = userCommandCounts.get(m.sender) || { count: 0, timestamp: Date.now() };
+
+                if (Date.now() - userInfo.timestamp >= oneDayInMs) {
+                    userInfo.count = 0;
+                    userInfo.timestamp = Date.now();
+                }
+
+                if (userInfo.count >= commandLimit) {
+                    const timeLeft = oneDayInMs - (Date.now() - userInfo.timestamp);
+                    const hoursLeft = Math.floor(timeLeft / (60 * 60 * 1000));
+                    const minutesLeft = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000));
+
+                    const warnmsg = `You have reached the maximum number of allowed commands. Join the group to use more commands continuously.\n\nOtherwise, wait for some time to use commands again.\n\nTime Left: ${hoursLeft}H ${minutesLeft}M`;
+
+                    await sock.sendMessage(m.from, {
+                        text: warnmsg,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `${m.pushName}`,
+                                sourceUrl: groupLink,
+                                body: ``
+                            }
+                        }
+                    }, { quoted: m });
+                    return;
+                } else {
+                    userInfo.count += 1;
+                    userCommandCounts.set(m.sender, userInfo);
+                }
+            }
+        }
+
+await handleAntilink(m, sock, logger, isBotAdmins, isAdmins, isCreator); 
+
+        const { isGroup, type, sender, from, body } = m;
+        console.log(m);
+
+        const pluginFiles = await fs.readdir(path.join(__dirname, '..', 'plugin'));
+
+        for (const file of pluginFiles) {
+            if (file.endsWith('.js')) {
+                const pluginModule = await import(path.join(__dirname, '..', 'plugin', file));
+                const loadPlugins = pluginModule.default;
+                await loadPlugins(m, sock);
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export default Handler;
