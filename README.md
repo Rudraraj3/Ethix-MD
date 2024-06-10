@@ -17,7 +17,6 @@
     </div>
     <div style="margin-top: 20px; text-align: center;">
       <a href="https://heroku.com/deploy" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 0 10px; display: inline-block;">Deploy to Heroku</a>
-      <a href="https://clever-cloud.com" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 0 10px; display: inline-block;">Deploy to Clever Cloud</a>
     </div>
   </div>
 </body>
