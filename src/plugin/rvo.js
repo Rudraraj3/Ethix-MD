@@ -9,7 +9,7 @@ const rvo = async (m, sock) => {
     const prefix = prefixMatch ? prefixMatch[0] : '/';
     const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
 
-    const validCommands = ['rvo', 'vv', 'readviewonce'];
+    const validCommands = ['vo', 'vv', 'viewonce'];
     if (!validCommands.includes(cmd)) return;
 
     // Check if the quoted message is a view-once message
@@ -22,7 +22,7 @@ const rvo = async (m, sock) => {
     const type = Object.keys(msg)[0];
     
     const originalCaption = msg[type].caption || '';
-    const newCaption = `${originalCaption}\n\n> © Powered By Ethix-MD`;
+    const newCaption = `${originalCaption}\n\n*© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3`;
 
 
     // Download the media content
@@ -50,7 +50,7 @@ const rvo = async (m, sock) => {
         contextInfo: {
           mentionedJid: [m.sender],
           forwardingScore: 9999,
-          isForwarded: true,
+          isForwarded: false,
         }
       }, { quoted: m });
     }
