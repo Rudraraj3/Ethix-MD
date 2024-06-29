@@ -14,11 +14,11 @@ const tomp3 = async (m, gss) => {
       return m.reply(`Send/Reply with Video to convert into MP3 with caption ${prefix + cmd}`);
     }
 
-    m.reply('Converting to MP3, please wait...');
+    m.reply(' *Converting to Mp3 MASTER-MIND-V3, please wait...*');
     const media = await m.quoted.download();
     const audio = await toAudio(media, 'mp4'); // Correctly importing toAudio function
 
-    await gss.sendMessage(m.from, { document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${gss.user.name}.mp3` }, { quoted: m });
+    await gss.sendMessage(m.from, { document: audio, mimetype: 'audio/mpeg', fileName: `Converted by ${gss.user.name}.mp3` }, { quoted: m });
   } catch (error) {
     console.error('Error:', error);
     m.reply('An error occurred while processing the command.');
