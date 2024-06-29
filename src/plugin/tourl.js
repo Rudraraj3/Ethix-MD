@@ -74,7 +74,7 @@ const tourl = async (m, gss) => {
           key: key,
           type: 14,
           editedMessage: {
-            conversation: '✅ Loading complete.',
+            conversation: '👋 Loading complete.',
           },
         },
       }, {});
