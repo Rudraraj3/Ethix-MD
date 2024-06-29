@@ -34,7 +34,7 @@ const song = async (m, Matrix) => {
     if (!text) return m.reply('Please provide a YouTube URL or search query');
 
     try {
-      await m.React("🕘");
+      await m.React("📡");
 
       // Search YouTube for the provided query
       const searchResult = await yts(text);
@@ -42,7 +42,7 @@ const song = async (m, Matrix) => {
 
       if (topVideos.length === 0) {
         m.reply('No results found.');
-        await m.React("❌");
+        await m.React("🙆‍♂️");
         return;
       }
 
@@ -77,10 +77,10 @@ const song = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `𝞢𝙏𝞖𝞘𝞦-𝞛𝘿 Video Downloader\n\n🔍 Search and download your favorite YouTube videos easily.\n\n🎵 Download audio or video with a single click.\n\n📌 Simply select a video from the list below to get started.\n\n`
+                text: `мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3 Video Downloader\n\n🔍 Download audio or video with a single click.\n\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By Ethix-MD"
+                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: `https://uploadimage.org/i/Untitled69-2.jpg` } }, { upload: Matrix.waUploadToServer })),
@@ -122,7 +122,7 @@ const song = async (m, Matrix) => {
               contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 9999,
-                isForwarded: true,
+                isForwarded: false,
               }
             }),
           },
@@ -132,7 +132,7 @@ const song = async (m, Matrix) => {
       await Matrix.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
       });
-      await m.React("✅");
+      await m.React("🚀");
 
       // Increment the global video and audio indices for the next set of videos
       videoIndex += topVideos.length;
@@ -140,7 +140,7 @@ const song = async (m, Matrix) => {
     } catch (error) {
       console.error("Error processing your request:", error);
       m.reply('Error processing your request.');
-      await m.React("❌");
+      await m.React("🙆‍♂️");
     }
   } else if (selectedId) { // Check if selectedId exists
     const isAudio = selectedId.startsWith('audio_');
@@ -162,7 +162,7 @@ const song = async (m, Matrix) => {
           const audioStream = ytdl(videoUrl, { filter: 'audioonly', quality: 'highestaudio' });
           const finalAudioBuffer = await streamToBuffer(audioStream);
           
-          await Matrix.sendMessage(m.from, { image: { url: thumbnailUrl }, caption: `Title: ${title}\nAuther: ${author}\nDuration: ${duration}\n> © Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿`}, { quoted: m });
+          await Matrix.sendMessage(m.from, { image: { url: thumbnailUrl }, caption: `Title: ${title}\nAuther: ${author}\nDuration: ${duration}\n> © Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3`}, { quoted: m });
 
           await Matrix.sendMessage(m.from, { audio: finalAudioBuffer, mimetype: 'audio/mpeg' }, { quoted: m });
         } else {
@@ -170,10 +170,10 @@ const song = async (m, Matrix) => {
           const videoStream = ytdl(videoUrl, { filter: 'audioandvideo', quality: 'highest' });
           const finalVideoBuffer = await streamToBuffer(videoStream);
 
-          await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: `Title: ${title}\nAuther: ${author}\nDuration: ${duration}\n\n> Powered by Ethix-MD` }, { quoted: m });
+          await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: `Title: ${title}\nAuther: ${author}\nDuration: ${duration}\n\n> Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3` }, { quoted: m });
         }
       } catch (error) {
-        console.error("Error fetching video details:", error);
+        console.error("Error fetching video brooh:", error);
         
       }
     } else {
