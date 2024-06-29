@@ -23,7 +23,7 @@ const tempMailCommand = async (m, Matrix) => {
 
     if (cmd === 'tempmail') {
         try {
-            await m.React("🕘");
+            await m.React("✨️");
 
             // Generate temporary email
             const genResponse = await fetch('https://tempmail.apinepdev.workers.dev/api/gen');
@@ -31,7 +31,7 @@ const tempMailCommand = async (m, Matrix) => {
 
             if (!genData.email) {
                 m.reply('Failed to generate temporary email.');
-                await m.React("❌");
+                await m.React("🙆‍♂️");
                 return;
             }
 
@@ -67,7 +67,7 @@ const tempMailCommand = async (m, Matrix) => {
                                 text: `Generated Temporary Email: ${tempEmail}`
                             }),
                             footer: proto.Message.InteractiveMessage.Footer.create({
-                                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
                             }),
                             header: proto.Message.InteractiveMessage.Header.create({
                                 title: "Temporary Email",
@@ -81,7 +81,7 @@ const tempMailCommand = async (m, Matrix) => {
                             contextInfo: {
                                 mentionedJid: [m.sender],
                                 forwardingScore: 9999,
-                                isForwarded: true,
+                                isForwarded: false,
                             }
                         }),
                     },
@@ -91,19 +91,19 @@ const tempMailCommand = async (m, Matrix) => {
             const sentMsg = await Matrix.relayMessage(msg.key.remoteJid, msg.message, {
                 messageId: msg.key.id
             });
-            await m.React("✅");
+            await m.React("🇮🇳");
 
         } catch (error) {
             console.error("Error processing your request:", error);
             m.reply('Error processing your request.');
-            await m.React("❌");
+            await m.React("🙆‍♂️");
         }
     } else if (selectedId && selectedId.startsWith('check_inbox_')) {
         // Extract email from the selectedId
         const email = selectedId.slice('check_inbox_'.length);
 
         try {
-            await m.React("🕘");
+            await m.React("✨️");
 
             // Check inbox for the provided email
             const inboxResponse = await fetch(`https://tempmail.apinepdev.workers.dev/api/getmessage?email=${email}`);
@@ -155,7 +155,7 @@ const tempMailCommand = async (m, Matrix) => {
                                 text: inboxMessages
                             }),
                             footer: proto.Message.InteractiveMessage.Footer.create({
-                                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
                             }),
                             header: proto.Message.InteractiveMessage.Header.create({
                                 title: "",
@@ -169,7 +169,7 @@ const tempMailCommand = async (m, Matrix) => {
                             contextInfo: {
                                 mentionedJid: [m.sender],
                                 forwardingScore: 9999,
-                                isForwarded: true,
+                                isForwarded: false,
                             }
                         }),
                     },
@@ -179,12 +179,12 @@ const tempMailCommand = async (m, Matrix) => {
             await Matrix.relayMessage(updatedMsg.key.remoteJid, updatedMsg.message, {
                 messageId: updatedMsg.key.id
             });
-            await m.React("✅");
+            await m.React("🇮🇳");
 
         } catch (error) {
             console.error("Error processing your request:", error);
             m.reply('Error processing your request.');
-            await m.React("❌");
+            await m.React("🙆‍♂️");
         }
     } else {
     }
