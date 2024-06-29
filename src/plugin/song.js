@@ -7,14 +7,14 @@ const prefixMatch = m.body.match(/^[\\/!#.]/);
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
   const text = m.body.slice(prefix.length + cmd.length).trim();
   
-  const validCommands = ['song', 'ytmp3', 'music'];
+  const validCommands = ['song', 'ytmp3', 'gan'];
 
    if (validCommands.includes(cmd)) {
   
     if (!text) return m.reply('give a YT URL or search query');	 
  
 try {
-    await m.React("🕘");
+    await m.React("🎊");
 
     // Check if the input is a valid YouTube URL
     const isUrl = ytdl.validateURL(text);
@@ -39,7 +39,7 @@ try {
     url: videoInfo.thumbnail,
   },
   caption: `
-╭──═❮ *YouTube Player* ✨ ❯═─┈•
+╭──═❮ *мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3*  ❯═─┈•
 │✑ *Title:* ${videoInfo.title}
 │✑ *duration:* ${videoInfo.timestamp}
 │✑ *Uploaded* ${videoInfo.ago}
@@ -49,11 +49,11 @@ try {
 };
           await Matrix.sendMessage(m.from, thumbnailMessage, { quoted: m });
           await Matrix.sendMessage(m.from, { audio: finalAudioBuffer, mimetype: 'audio/mpeg' }, { quoted: m });
-          await m.React("✅");
+          await m.React("🇮🇳");
         } catch (err) {
           console.error('Error sending audio:', err);
           m.reply('Error sending audio.');
-          await m.React("❌");
+          await m.React("🙆‍♂️");
         }
       });
     } else {
@@ -63,7 +63,7 @@ try {
 
       if (!firstVideo) {
         m.reply('Audio not found.');
-        await m.React("❌");
+        await m.React("🙆‍♂️");
         return;
       }
 
@@ -82,7 +82,7 @@ try {
     url: firstVideo.thumbnail,
   },
   caption: `
-╭──═❮ *YouTube Player* ✨ ❯═─┈•
+╭──═❮ *мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3* ❯═─┈•
 │✑ *Title:* ${firstVideo.title}
 │✑ *duration:* ${firstVideo.timestamp}
 │✑ *Uploaded* ${firstVideo.ago}
@@ -117,7 +117,7 @@ try {
         } catch (err) {
           console.error('Error sending audio:', err);
           m.reply('Error sending audio.');
-          await m.React("❌");
+          await m.React("🙆‍♂️");
         }
       });
     }
