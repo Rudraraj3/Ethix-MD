@@ -35,13 +35,13 @@ const tiktokCommand = async (m, Matrix) => {
     }
 
     try {
-      await m.React("🕘");
+      await m.React("🎊");
 
       // Fetch TikTok data
       const tikTokData = await tikdown(text);
       if (!tikTokData.status) {
         await m.reply('No results found.');
-        await m.React("❌");
+        await m.React("🙆‍♂️");
         return;
       }
 
@@ -76,10 +76,10 @@ const tiktokCommand = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `𝞢𝙏𝞖𝞘𝞦-𝞛𝘿 TikTok Download\n\n🔍 Select the desired media type to download.\n\n📌 Choose an option to download.\n\nTitle: ${currentResult.data.title}\nAuthor: ${currentResult.data.author.nickname}\nViews: ${currentResult.data.view}\nDuration: ${currentResult.data.duration}s\n\n`
+                text: `🔍 Title: ${currentResult.data.title}\nAuthor: ${currentResult.data.author.nickname}\nViews: ${currentResult.data.view}\nDuration: ${currentResult.data.duration}s\n\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",
@@ -93,7 +93,7 @@ const tiktokCommand = async (m, Matrix) => {
               contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 9999,
-                isForwarded: true,
+                isForwarded: false,
               }
             }),
           },
@@ -103,13 +103,13 @@ const tiktokCommand = async (m, Matrix) => {
       await Matrix.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
       });
-      await m.React("✅");
+      await m.React("🇮🇳");
 
       searchIndex += 1; // Increment the global search index for the next set of results
     } catch (error) {
       console.error("Error processing your request:", error);
       await m.reply('Error processing your request.');
-      await m.React("❌");
+      await m.React("🙆‍♂️");
     }
   } else if (selectedId) { // Check if selectedId exists
     if (selectedId.startsWith('media_')) {
@@ -135,9 +135,9 @@ const tiktokCommand = async (m, Matrix) => {
           const fileSizeInMB = finalMediaBuffer.length / (1024 * 1024);
 
           if (type === 'video' && fileSizeInMB <= 300) {
-            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: '> © Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' };
+            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: ' *© Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3*' };
           } else if (type === 'audio' && fileSizeInMB <= 300) {
-            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: '> © Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' };
+            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: ' *© Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3*' };
           }
 
           await Matrix.sendMessage(m.from, content, { quoted: m });
