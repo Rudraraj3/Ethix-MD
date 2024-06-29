@@ -34,7 +34,7 @@ const song = async (m, Matrix) => {
     }
 
     try {
-      await m.React("🕘");
+      await m.React("📡");
 
       // Get video info
       const info = await ytdl.getInfo(text);
@@ -42,7 +42,7 @@ const song = async (m, Matrix) => {
 
       if (formats.length === 0) {
         m.reply('No downloadable formats found.');
-        await m.React("❌");
+        await m.React("🙆‍♂️");
         return;
       }
 
@@ -76,10 +76,10 @@ const song = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `𝞢𝙏𝞖𝞘𝞦-𝞛𝘿 Video Downloader\n\n🔍 Select the desired quality to download the video.\n\n📌 Simply select a quality from the list below to get started.\n\nTitle: ${videoDetails.title}\nAuthor: ${videoDetails.author}\nViews: ${videoDetails.views}\nLikes: ${videoDetails.likes}\nUpload Date: ${videoDetails.uploadDate}\nDuration: ${videoDetails.duration}\n\n`
+                text: `🔍Title: ${videoDetails.title}\nAuthor: ${videoDetails.author}\nViews: ${videoDetails.views}\nLikes: ${videoDetails.likes}\nUpload Date: ${videoDetails.uploadDate}\nDuration: ${videoDetails.duration}\n\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: info.videoDetails.thumbnails[0].url } }, { upload: Matrix.waUploadToServer })),
@@ -108,7 +108,7 @@ const song = async (m, Matrix) => {
               contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 9999,
-                isForwarded: true,
+                isForwarded: false,
               }
             }),
           },
@@ -118,14 +118,14 @@ const song = async (m, Matrix) => {
       await Matrix.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
       });
-      await m.React("✅");
+      await m.React("🚀");
 
       // Increment the global video index for the next set of videos
       videoIndex += formats.length;
     } catch (error) {
-      console.error("Error processing your request:", error);
+      console.error("Error processing broohh:", error);
       m.reply('Error processing your request.');
-      await m.React("❌");
+      await m.React("🙆‍♂️");
     }
   } else if (selectedId) { // Check if selectedId exists
     const key = parseInt(selectedId.replace('quality_', ''));
@@ -143,10 +143,10 @@ const song = async (m, Matrix) => {
         await Matrix.sendMessage(m.from, {
           video: finalVideoBuffer,
           mimetype: 'video/mp4',
-          caption: `Title: ${selectedFormat.title}\nAuthor: ${selectedFormat.author}\nViews: ${selectedFormat.views}\nLikes: ${selectedFormat.likes}\nUpload Date: ${selectedFormat.uploadDate}\nDuration: ${duration}\nSize: ${size}\n\n> Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿`
+          caption: `Title: ${selectedFormat.title}\nAuthor: ${selectedFormat.author}\nViews: ${selectedFormat.views}\nLikes: ${selectedFormat.likes}\nUpload Date: ${selectedFormat.uploadDate}\nDuration: ${duration}\nSize: ${size}\n\n> Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3`
         }, { quoted: m });
       } catch (error) {
-        console.error("Error fetching video details:", error);
+        console.error("Error fetching brooh", error);
         m.reply('Error fetching video details.');
       }
     } else {
