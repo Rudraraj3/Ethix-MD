@@ -14,7 +14,7 @@ const instaDownload = async (m, Matrix) => {
     if (!text) return m.reply('Please provide an Instagram URL.');
 
     try {
-      await m.React('🕘');
+      await m.React('🎊');
 
       const apiUrl = `${apiBaseUrl}${encodeURIComponent(text)}`;
       const response = await axios.get(apiUrl);
@@ -23,7 +23,7 @@ const instaDownload = async (m, Matrix) => {
       if (result.status && result.data.length > 0) {
         const mediaType = result.data[0].type;
         const mediaUrl = result.data[0].url;
-        const caption = "> © Powered By Ethix-Xsid";
+        const caption = " *© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3*";
         
         if (mediaType === 'image') {
           const sendImage = {
@@ -42,14 +42,14 @@ const instaDownload = async (m, Matrix) => {
           throw new Error('Unsupported media type.');
         }
 
-        await m.React('✅');
+        await m.React('🇮🇳');
       } else {
         throw new Error('Invalid response from the downloader.');
       }
     } catch (error) {
       console.error('Error downloading Instagram media:', error.message);
       m.reply('Error downloading Instagram media.');
-      await m.React('❌');
+      await m.React('🙆‍♂️');
     }
   }
 };
