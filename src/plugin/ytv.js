@@ -143,7 +143,7 @@ const song = async (m, Matrix) => {
         await Matrix.sendMessage(m.from, {
           video: finalVideoBuffer,
           mimetype: 'video/mp4',
-          caption: `Title: ${selectedFormat.title}\nAuthor: ${selectedFormat.author}\nViews: ${selectedFormat.views}\nLikes: ${selectedFormat.likes}\nUpload Date: ${selectedFormat.uploadDate}\nDuration: ${duration}\nSize: ${size}\n\n> Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3`
+          caption: `Title: ${selectedFormat.title}\nAuthor: ${selectedFormat.author}\nViews: ${selectedFormat.views}\nLikes: ${selectedFormat.likes}\nUpload Date: ${selectedFormat.uploadDate}\nDuration: ${duration}\nSize: ${size}\n\n *Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3*`
         }, { quoted: m });
       } catch (error) {
         console.error("Error fetching brooh", error);
