@@ -10,7 +10,7 @@ const anticallcommand = async (m, Matrix) => {
   const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
 
   if (cmd === 'anticall') {
-    if (!isCreator) return m.reply("*📛 THIS IS AN OWNER COMMAND*");
+    if (!isCreator) return m.reply(" *THIS IS AN OWNER COMMAND*");
     let responseMessage;
 
     if (text === 'on') {
