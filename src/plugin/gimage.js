@@ -17,7 +17,7 @@ const imageCommand = async (m, sock) => {
     }
 
     try {
-      await m.React("📥");
+      await m.React("🎊");
       const response = await axios.get(`https://aemt.me/googleimage?query=${encodeURIComponent(query)}`);
       const results = response.data.result.slice(0, 5); // Get the top 5 images
 
@@ -31,7 +31,7 @@ const imageCommand = async (m, sock) => {
         const imageBuffer = Buffer.from(response.data, 'binary');
 
         await sock.sendMessage(m.from, { image: imageBuffer, caption: '' }, { quoted: m });
-        await m.React("✅");
+        await m.React("🇮🇳");
       }
     } catch (error) {
       console.error("Error fetching images:", error);
