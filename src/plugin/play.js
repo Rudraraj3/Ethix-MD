@@ -27,7 +27,7 @@ const playcommand = async (m, Matrix) => {
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
   const text = m.body.slice(prefix.length + cmd.length).trim();
 
-  const validCommands = ['play'];
+  const validCommands = ['research'];
 
   if (validCommands.includes(cmd)) {
     if (!text) {
@@ -35,7 +35,7 @@ const playcommand = async (m, Matrix) => {
     }
 
     try {
-      await m.React("🕘");
+      await m.React("🎊");
 
       // Perform YouTube search
       const searchResults = await ytSearch(text);
@@ -43,7 +43,7 @@ const playcommand = async (m, Matrix) => {
 
       if (videos.length === 0) {
         m.reply('No results found.');
-        await m.React("❌");
+        await m.React("🙆‍♂️");
         return;
       }
 
@@ -102,10 +102,10 @@ const playcommand = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `𝞢𝙏𝞖𝞘𝞦-𝞛𝘿 YouTube Search\n\n🔍 Select the desired media type to download.\n\n📌 Choose an option to download.\n\nTitle: ${currentResult.title}\nAuthor: ${currentResult.author.name}\nViews: ${currentResult.views}\nDuration: ${currentResult.timestamp}\n\n`
+                text: `🔍 Title: ${currentResult.title}\nAuthor: ${currentResult.author.name}\nViews: ${currentResult.views}\nDuration: ${currentResult.timestamp}\n\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: currentResult.title,
@@ -119,7 +119,7 @@ const playcommand = async (m, Matrix) => {
               contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 9999,
-                isForwarded: true,
+                isForwarded: false,
               }
             }),
           },
@@ -129,13 +129,13 @@ const playcommand = async (m, Matrix) => {
       await Matrix.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
       });
-      await m.React("✅");
+      await m.React("🇮🇳");
 
       searchIndex += 1; // Increment the global search index for the next set of results
     } catch (error) {
       console.error("Error processing your request:", error);
       m.reply('Error processing your request.');
-      await m.React("❌");
+      await m.React("🙆‍♂️");
     }
   } else if (selectedId) { // Check if selectedId exists
     if (selectedId.startsWith('next_')) {
@@ -194,10 +194,10 @@ const playcommand = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `𝞢𝙏𝞖𝞘𝞦-𝞛𝘿 YouTube Search\n\n🔍 Select the desired media type to download.\n\n📌 Choose an option to download.\n\nTitle: ${currentResult.title}\nAuthor: ${currentResult.author.name}\nViews: ${currentResult.views}\nDuration: ${currentResult.timestamp}\n\n`
+                text: `🔍 Title: ${currentResult.title}\nAuthor: ${currentResult.author.name}\nViews: ${currentResult.views}\nDuration: ${currentResult.timestamp}\n\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿"
+                text: "© Powered By мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: currentResult.title,
@@ -211,7 +211,7 @@ const playcommand = async (m, Matrix) => {
               contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 9999,
-                isForwarded: true,
+                isForwarded: false,
               }
             }),
           },
@@ -245,9 +245,9 @@ const playcommand = async (m, Matrix) => {
           const fileSizeInMB = finalMediaBuffer.length / (1024 * 1024);
 
           if (type === 'audio' && fileSizeInMB <= 300) {
-            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: 'Downloaded by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' };
+            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: 'Downloaded by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' };
           } else if (type === 'video' && fileSizeInMB <= 300) {
-            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: 'Downloaded by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' };
+            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: 'Downloaded by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' };
           } else if (type === 'audiodoc') {
             content = { document: finalMediaBuffer, mimetype: 'audio/mp3', fileName: `${selectedMedia.title}.mp3` };
           } else if (type === 'videodoc') {
@@ -258,7 +258,7 @@ const playcommand = async (m, Matrix) => {
         } catch (error) {
           console.error("Error processing your request:", error);
           m.reply('Error processing your request.');
-          await m.React("❌");
+          await m.React("🙆‍♂️");
         }
       }
     }
