@@ -35,7 +35,7 @@ const video = async (m, Matrix) => {
 
             const videoInfo = await yts({ videoId: ytdl.getURLVideoID(text) });
     
-            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
+            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '© Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
             await m.React("🇮🇳");
           } catch (err) {
             console.error('Error sending video:', err);
@@ -67,7 +67,7 @@ const video = async (m, Matrix) => {
           try {
             const finalVideoBuffer = Buffer.concat(videoBuffer);
           
-            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
+            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '© Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
             await m.React("🇮🇳");
           } catch (err) {
             console.error('Error sending video:', err);
