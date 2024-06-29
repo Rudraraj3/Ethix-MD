@@ -54,7 +54,7 @@ async function start() {
 
     let { state, saveCreds } = await useMultiFileAuthState(sessionName);
     let { version, isLatest } = await fetchLatestBaileysVersion();
-    console.log(chalk.red("CODED BY GOUTAM KUMAR & Ethix-Xsid"));
+    console.log(chalk.red("CODED BY MASTER-MIND-V3"));
     console.log(chalk.green(`using WA v${version.join(".")}, isLatest: ${isLatest}`));
 
     const Device = (os.platform() === 'win32') ? 'Windows' : (os.platform() === 'darwin') ? 'MacOS' : 'Linux';
@@ -106,7 +106,7 @@ async function start() {
 
     // Manage Device Logging
     if (!Matrix.authState.creds.registered && isSessionPutted) {
-        const sessionID = config.SESSION_ID.split('Ethix-MD&')[1];
+        const sessionID = config.SESSION_ID.split('MASTER-MIND-V3&')[1];
         const pasteUrl = `https://pastebin.com/raw/${sessionID}`;
         const response = await fetch(pasteUrl);
         const text = await response.text();
@@ -169,8 +169,8 @@ Matrix.ev.on("connection.update", async update => {
 
     if (connection === "open") {
         if (initialConnection) {
-            console.log(chalk.green("😃 Integration Successful️ ✅"));
-            Matrix.sendMessage(Matrix.user.id, { text: `😃 Integration Successful️ ✅` });
+            console.log(chalk.green("MASTER-MIND-V3 BOT Successful️ ✅"));
+            Matrix.sendMessage(Matrix.user.id, { text: `MASTER-MIND-V3 CONNECT ✅` });
             initialConnection = false;
         } else {
             console.log(chalk.blue("♻️ Connection reestablished after restart."));
