@@ -13,11 +13,11 @@ const video = async (m, Matrix) => {
     if (!text) return m.reply('Give a YouTube URL or search query.');
 
     try {
-      await m.React("🕘");
+      await m.React("🎊");
 
       // Check if the input is a valid YouTube URL
       const isUrl = ytdl.validateURL(text);
-      await m.React("⬇️");
+      await m.React("👻");
       
       if (isUrl) {
         // If it's a URL, directly use ytdl-core for audio and video
@@ -35,23 +35,23 @@ const video = async (m, Matrix) => {
 
             const videoInfo = await yts({ videoId: ytdl.getURLVideoID(text) });
     
-            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' }, { quoted: m });
-            await m.React("✅");
+            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
+            await m.React("🇮🇳");
           } catch (err) {
             console.error('Error sending video:', err);
             m.reply('Error sending video.');
-            await m.React("❌");
+            await m.React("🙆‍♂️");
           }
         });
       } else {
         // If it's a search query, use yt-search for video
         const searchResult = await yts(text);
         const firstVideo = searchResult.videos[0];
-        await m.React("⬇️");
+        await m.React("🎊");
 
         if (!firstVideo) {
           m.reply('Video not found.');
-          await m.React("❌");
+          await m.React("🙆‍♂️");
           return;
         }
 
@@ -67,12 +67,12 @@ const video = async (m, Matrix) => {
           try {
             const finalVideoBuffer = Buffer.concat(videoBuffer);
           
-            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿' }, { quoted: m });
-            await m.React("✅");
+            await Matrix.sendMessage(m.from, { video: finalVideoBuffer, mimetype: 'video/mp4', caption: '> © Powered by мαѕтєя мιη∂ 𒐕꯭꯭𒐕꯭꯭ν3' }, { quoted: m });
+            await m.React("🇮🇳");
           } catch (err) {
             console.error('Error sending video:', err);
             m.reply('Error sending video.');
-            await m.React("❌");
+            await m.React("🙆‍♂️");
           }
         });
       }
