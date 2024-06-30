@@ -7,7 +7,7 @@ const prefixMatch = m.body.match(/^[\\/!#.]/);
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
   const text = m.body.slice(prefix.length + cmd.length).trim();
   
-  const validCommands = ['song', 'ytmp3', 'gan'];
+  const validCommands = ['song', 'play', 'gan'];
 
    if (validCommands.includes(cmd)) {
   
